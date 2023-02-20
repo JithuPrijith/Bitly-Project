@@ -14,17 +14,25 @@ export class SearchComponentComponent implements OnInit{
   constructor(){}
 
   ngOnInit(): void {
-    
+
   }
 
   onSubmit(form: NgForm){
     if(form.invalid){
       return
     }
-    console.log(form.value.searchInput);
-    
-    this.result = "data comes"
-    
-  }
 
-}
+     console.log(form.value.searchInput);
+
+     this.result = "data comes"
+
+    }
+
+    }
+
+
+
+
+
+
+
