@@ -8,8 +8,14 @@
           </button>
     </form>
 </mat-card>
-<mat-card *ngIf="result">
-    <div>
-        <p>{{result}}</p>
-    </div>
+
+<div>
+  <mat-card class="example-card" *ngIf="result">
+    <mat-card-header>
+     <mat-card-title>SHORTENED URL</mat-card-title>
+    </mat-card-header>
+    <mat-card-content >
+      <div><h4><a>{{result}}</a></h4> </div>
+     </mat-card-content>
 </mat-card>
+</div>
