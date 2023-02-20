@@ -8,14 +8,23 @@ import {MatSortModule} from '@angular/material/sort';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { TableComponent } from './components/table/table.component';
+import { SearchComponentComponent } from './components/search-component/search-component.component';
+
+import { MatCardModule } from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TableComponent
+    TableComponent,
+    SearchComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +33,10 @@ import { TableComponent } from './components/table/table.component';
     MatToolbarModule,
     MatTableModule,
     MatSortModule,
+    MatCardModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
     MatButtonModule
   ],
   providers: [],

@@ -1,0 +1,15 @@
+<mat-card>
+    <form (submit)="onSubmit(submitForm)" #submitForm="ngForm">
+        <mat-form-field>
+            <input type="text" name="searchInput" matInput  placeholder="paste your link here" required ngModel #searchInput="ngModel">
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit">
+            submit
+          </button>
+    </form>
+</mat-card>
+<mat-card *ngIf="result">
+    <div>
+        <p>{{result}}</p>
+    </div>
+</mat-card>
