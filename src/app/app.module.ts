@@ -3,13 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatButtonModule} from '@angular/material/button';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 
-import { TableComponent } from './components/table/table.component';
 import { SearchComponentComponent } from './components/search-component/search-component.component';
 
 import { MatCardModule } from '@angular/material/card';
@@ -24,7 +22,6 @@ import {HttpClientModule}  from "@angular/common/http";
   declarations: [
     AppComponent,
     HeaderComponent,
-    TableComponent,
     SearchComponentComponent
   ],
   imports: [
@@ -32,7 +29,6 @@ import {HttpClientModule}  from "@angular/common/http";
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatTableModule,
     MatSortModule,
     MatCardModule,
     MatFormFieldModule,
