@@ -5,9 +5,9 @@ const {
   postUrl,
 } = require("../controllers/controllers");
 
-router.get("get-url", getUrlController);
+router.get("/get-url", getUrlController);
 
-router.delete("delete", deleteUrl);
+router.delete("/delete", deleteUrl);
 
 router.post("/posts", postUrl);
 

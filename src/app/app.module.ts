@@ -35,7 +35,8 @@ import {HttpClientModule}  from "@angular/common/http";
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

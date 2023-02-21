@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {Component, OnInit} from '@angular/core';
 
 export interface PeriodicElement {
 
@@ -8,13 +9,6 @@ export interface PeriodicElement {
   link:string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, link:"ggggggggg",shortlink: 'H', del:"delete"},
-  {position: 2,  link:"ggggggggg",shortlink: 'He',del:"delete"},
-  {position: 3, link:"ggggggggg",shortlink: 'Li',del:"delete"},
-  {position: 4,   link:"ggggggggg",shortlink: 'Be',del:"delete"},
-
-];
 
 /**
  * @title Basic use of `<table mat-table>`
@@ -24,8 +18,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['table.component.css'],
   templateUrl: 'table.component.html',
 })
-export class TableComponent {
+
+export class TableComponent implements OnInit{
   displayedColumns: string[] = ['position',  'link','shortlink',"del"];
-  dataSource = ELEMENT_DATA;
+  dataSource!:any;
+
+  constructor(public http: HttpClient){}
+
+  ngOnInit(): void {
+    this.getUrl();
+  }
+
+  getUrl(){
+    this.http.get("http://localhost:3000/api/get-url")
+    .subscribe((result:any) => {
+      this.dataSource = result.urlData
+    })
+  }
+
+  onDelete(id:string){
+    console.log(id);
+  }
+
 }
 

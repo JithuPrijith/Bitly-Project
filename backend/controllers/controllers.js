@@ -3,10 +3,9 @@ const Data = require("../models/data-model");
 module.exports = {
   getUrlController: (req, res) => {
     try {
-      dataModel
+        Data
         .find()
         .then((data) => {
-          console.log(data);
           res.status(200).json({
             message: "url fetched successfully",
             urlData: data,
@@ -29,7 +28,7 @@ module.exports = {
   deleteUrl: (req, res) => {
     let urlId = req.params._id;
     try {
-      dataModel
+      Data
         .findOneAndDelete({ _id: urlId })
         .then((result) => {
           res.status(200).json({
@@ -57,7 +56,6 @@ module.exports = {
       shortUrl: req.body.short,
     });
     post.save();
-    console.log(post);
     res.status(200).json({
       message: "post added success",
     });
