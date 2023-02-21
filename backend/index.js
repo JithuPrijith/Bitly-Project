@@ -24,11 +24,3 @@ app.listen(3000, () => {
   console.log("server listening to port 3000");
 });
 
-app.use("/post", (req, res, next) => {
-  console.log(req.body.link);
-
-  res.status(200).json({
-    message: "success",
-    links: links,
-  });
-});
