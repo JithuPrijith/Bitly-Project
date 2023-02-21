@@ -36,7 +36,6 @@ export class SearchComponentComponent implements OnInit{
 
          )
       })
-
     }
 
     }

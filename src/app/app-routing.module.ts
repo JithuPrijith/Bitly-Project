@@ -5,7 +5,7 @@ import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
   {path:'',component:SearchComponentComponent},
-  {path:'table',component:TableComponent}
+  {path:'table', loadChildren: () => import("./components/table/table.module").then(m => m.TableModule)}
 ];
 
 @NgModule({
