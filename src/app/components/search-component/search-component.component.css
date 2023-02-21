@@ -9,3 +9,19 @@ mat-form-field{
 button {
     margin: 1rem;
 }
+
+.example-card{
+  max-width: 70vw;
+  max-height: 1000px;
+  justify-content: center;
+}
+
+mat-card-content{
+  text-align: center;
+  color: blue;
+}
+mat-card-header{
+  justify-content: center;
+  color: red;
+  border-bottom: 1px solid lightcoral;
+}

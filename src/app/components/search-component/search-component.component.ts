@@ -9,22 +9,39 @@ import { NgForm } from '@angular/forms';
 export class SearchComponentComponent implements OnInit{
 
   searchInput: string = "";
-  result!: string | null
+  result: string | null ='';
+
+  // private linkId:string;
 
   constructor(){}
 
   ngOnInit(): void {
-    
+
   }
 
   onSubmit(form: NgForm){
     if(form.invalid){
       return
-    }
-    console.log(form.value.searchInput);
-    
-    this.result = "data comes"
-    
-  }
+    }else{
+      const text=form.value.searchInput;
+       fetch(`https://api.shrtco.de/v2/shorten?url=${text}`)
+       .then((res)=>{
+         return res.json();
+       })
+       .then((data)=>{
+        this.result= data.result.short_link;
+      })
 
+      }
+
+    }
 }
+
+
+
+
+
+
+
+
+
