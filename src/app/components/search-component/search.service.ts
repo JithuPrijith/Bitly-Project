@@ -27,14 +27,14 @@ const link:Link={
   id: ""
 }
 this.links.push(link)
-console.log(link);
+// console.log(link);
 
-this.http.post('http://localhost:3000/api/post',link);
+this.http.post<{message:string,post :Link}>('http://localhost:3000/api/posts',link)
+.subscribe((res)=>{
+  console.log(res.message);
+})
 
 
 }
-
-
-
 
 }
