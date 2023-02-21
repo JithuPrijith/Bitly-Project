@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-
+import { FormGroup, NgForm } from '@angular/forms';
+import { SearchService } from './search.service';
 @Component({
   selector: 'app-search-component',
   templateUrl: './search-component.component.html',
@@ -10,10 +10,10 @@ export class SearchComponentComponent implements OnInit{
 
   searchInput: string = "";
   result: string | null ='';
+  form!: FormGroup;
+  // private linkId!: string;
 
-  // private linkId:string;
-
-  constructor(){}
+  constructor(public SearchService:SearchService){}
 
   ngOnInit(): void {
 
@@ -30,9 +30,14 @@ export class SearchComponentComponent implements OnInit{
        })
        .then((data)=>{
         this.result= data.result.short_link;
+        this.SearchService.addContent(
+         text,
+         this.result,
+
+         )
       })
 
-      }
+    }
 
     }
 }
