@@ -13,18 +13,18 @@
 
 
      <ng-container matColumnDef="link">
-      <th mat-header-cell *matHeaderCellDef> Link </th>
+      <th mat-header-cell *matHeaderCellDef> LINK </th>
       <td mat-cell *matCellDef="let element"> {{element.url}} </td>
     </ng-container>
 
 
     <ng-container matColumnDef="shortlink">
-      <th mat-header-cell *matHeaderCellDef> Shortened </th>
+      <th mat-header-cell *matHeaderCellDef> SHORTENED </th>
       <td mat-cell *matCellDef="let element"> {{element.shortUrl}} </td>
     </ng-container>
 
      <ng-container matColumnDef="del">
-      <th mat-header-cell *matHeaderCellDef> Delete</th>
+      <th mat-header-cell *matHeaderCellDef> REMOVE</th>
       <td mat-cell  *matCellDef="let element">
         <button mat-raised-button color="accent" (click)="onDelete(element._id)"> Delete </button>
       </td>

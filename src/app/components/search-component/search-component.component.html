@@ -1,21 +1,21 @@
 <mat-card>
-    <form (submit)="onSubmit(submitForm)" #submitForm="ngForm">
-        <mat-form-field>
-            <input type="text" name="searchInput" matInput  placeholder="paste your link here" required ngModel #searchInput="ngModel">
-        </mat-form-field>
-        <button mat-raised-button color="accent" type="submit">
-            submit
-          </button>
-    </form>
+  <form (submit)="onSubmit(submitForm)" #submitForm="ngForm">
+      <mat-form-field>
+          <input type="text" name="searchInput" matInput  placeholder="paste your link here" required ngModel #searchInput="ngModel">
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">
+          submit
+        </button>
+  </form>
 </mat-card>
 
 <div>
-  <mat-card class="example-card" *ngIf="result">
-    <mat-card-header>
-     <mat-card-title>SHORTENED URL</mat-card-title>
-    </mat-card-header>
-    <mat-card-content >
-      <div><h4><a>{{result}}</a></h4> </div>
-     </mat-card-content>
+<mat-card class="example-card" *ngIf="result">
+  <mat-card-header>
+   <mat-card-title>SHORTENED URL</mat-card-title>
+  </mat-card-header>
+  <mat-card-content >
+    <div><h4><a>{{result}}</a></h4> </div>
+   </mat-card-content>
 </mat-card>
 </div>
