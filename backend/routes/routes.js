@@ -7,7 +7,7 @@ const {
 
 router.get("/get-url", getUrlController);
 
-router.delete("/delete", deleteUrl);
+router.delete("/delete/:id", deleteUrl);
 
 router.post("/posts", postUrl);
 

@@ -11,7 +11,7 @@ export interface PeriodicElement {
 
 
 /**
- * @title Basic use of `<table mat-table>`
+ *  Basic use of `<table mat-table>`
  */
 @Component({
   selector: 'app-table',
@@ -37,7 +37,12 @@ export class TableComponent implements OnInit{
   }
 
   onDelete(id:string){
-    console.log(id);
+    // console.log(id);
+   return this.http.delete(`http://localhost:3000/api/delete/${id}`)
+    .subscribe((result:any) => {
+      this.dataSource = result.urlData
+        // console.log(result);
+ })
   }
 
 }
